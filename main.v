@@ -1,13 +1,9 @@
 module main
 
 import uapi { I2c }
-import drivers { Ch1116, Display }
+import drivers { Ch1116 }
 
 fn main() {
-	dp := Display.new(
-		width:  128
-		height: 64
-	)
 	i2c := I2c.new('/dev/i2c-2', 0x3c) or { panic('Failed to open I2C device: ${err}') }
 	mut ch := Ch1116.new(i2c: i2c)
 	ch.set_contrast(255) or { panic('Failed to set breathing light: ${err}') }
