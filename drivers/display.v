@@ -7,7 +7,7 @@ pub:
 	height u8
 	width  u8
 pub mut:
-	ch Ch1116
+	ch &Ch1116
 }
 
 @[params]
