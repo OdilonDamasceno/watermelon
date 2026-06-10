@@ -5,7 +5,7 @@ import drivers { Display, new_display }
 @[heap]
 pub struct Window {
 mut:
-	display Display
+	display &Display
 pub:
 	size Size
 }
