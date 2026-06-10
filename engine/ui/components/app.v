@@ -24,8 +24,9 @@ pub fn new_app(p AppProps) &App {
 
 pub fn (mut app App) render(mut ctx Context) ! {
 	app.canvas_draw_rect(0, 0, 10, 10)!
-	if app.child != none {
-		app.child.render(ctx)
+	if mut child := app.child {
+		child.render(ctx)
+		app.child = child
 	}
 }
 
