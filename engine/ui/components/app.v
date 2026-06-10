@@ -13,11 +13,11 @@ pub mut:
 pub struct AppProps {
 }
 
-pub fn new_app(p AppProps) &App {
-	mut window := new_window() or { panic('Failed to create window: ${err}') }
-	mut ctx := new_context(window)
+pub fn new_app(p AppProps) !App {
+	window := new_window() or { return error('Failed to create window: ${err}') }
+	ctx := new_context(window)
 	app := new_widget(ctx)
-	return &App{
+	return App{
 		Widget: app
 	}
 }
