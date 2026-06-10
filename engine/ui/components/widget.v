@@ -10,10 +10,10 @@ pub mut:
 	context Context
 }
 
-fn new_widget(context Context) &Widget {
+fn new_widget(context Context) Widget {
 	canvas := new_canvas(context.window)
 
-	return &Widget{
+	return Widget{
 		Canvas:  canvas
 		Rect:    context.Rect
 		context: context
