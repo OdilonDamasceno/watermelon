@@ -132,6 +132,9 @@ pub fn (mut ch Ch1116) flush() ! {
 ----------------------------------------------------------------------------------*/
 
 pub fn (mut buffer DisplayBuffer) set_pixel(x u8, y u8, on bool) ! {
+	if x > 127 || y > 63 {
+		return error('Coordinates out of display bounds')
+	}
 	page := int(y) / 8
 	bit_position := int(y) % 8
 	x_pos := int(x)
