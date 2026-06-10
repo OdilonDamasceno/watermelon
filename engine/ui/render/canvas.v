@@ -7,11 +7,9 @@ mut:
 	window ?&Window
 }
 
-pub fn new_canvas(window &Window) &Canvas {
-	unsafe {
-		return &Canvas{
-			window: window
-		}
+pub fn new_canvas(window &Window) Canvas {
+	return Canvas{
+		window: window
 	}
 }
 
