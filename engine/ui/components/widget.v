@@ -23,6 +23,6 @@ fn new_widget(context Context) Widget {
 fn (mut w Widget) render(ctx Context) {}
 
 fn (mut w Widget) set_state(run fn () !) ! {
-	run() or { return }
+	run()!
 	w.canvas_update()!
 }
