@@ -2,7 +2,7 @@
     "lsp": {
         "v": {
             "binary": {
-                "path": "/home/orangepi/.config/v-analyzer/bin/v-analyzer"
+                "path": "v-analyzer"
             }
         }
     }
